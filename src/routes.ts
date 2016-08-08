@@ -3,7 +3,7 @@
 import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES, RouterConfig} from '@angular/router';
 import {Hello} from './app/hello.component';
-import {Heroes} from './app/heroes.component';
+import {HeroesComponent} from './app/heroes.component';
 
 @Component({
   selector: 'root',
@@ -41,6 +41,6 @@ export const routes: RouterConfig = [
   },
   {
     path: 'heroes',
-    component: Heroes
+    component: HeroesComponent
   }
 ];

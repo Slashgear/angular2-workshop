@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {HeroComponent} from './hero.component';
 
 @Component({
   selector: 'heroes',
@@ -6,11 +7,12 @@ import {Component} from '@angular/core';
   <h1>Heroes</h1>
   <ul>
     <li *ngFor="let name of names">
-      {{name}}
+      <hero [name]="name"></hero>
     </li>
   </ul>
-  `
+  `,
+  directives: [HeroComponent]
 })
-export class Heroes {
+export class HeroesComponent {
   names: string[] = ['Ironman', 'Captain America'];
 }
