@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {HeroComponent} from './hero.component';
 import {Hero} from './hero';
+import {HeroService} from './hero.service';
 
 @Component({
   selector: 'heroes',
@@ -12,8 +13,12 @@ import {Hero} from './hero';
     </li>
   </ul>
   `,
-  directives: [HeroComponent]
+  directives: [HeroComponent],
+  providers: [HeroService]
 })
 export class HeroesComponent {
-  heroes: Hero[] = [new Hero('Ironman'), new Hero('Captain America')];
+  heroes: Hero[];
+  constructor(heroService: HeroService){
+    this.heroes = heroService.findHeroes();
+  }
 }
