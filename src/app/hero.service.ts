@@ -1,8 +1,17 @@
 import {Hero} from './hero';
 import {Observable} from 'rxjs/Rx';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
 
+@Injectable()
 export class HeroService {
+  private _heroesUrl =
+  'http://nicolaspayot.github.io/workshop/heroes.json';
+
+  constructor(private http: Http) {}
+
   findHeroes(): Observable<Hero[]> {
-    return Observable.of([new Hero('Ironman'), new Hero('Captain America')]);
+    return this.http.get(this._heroesUrl)
+    .map(response => <Hero[]> response.json());
   }
 }

@@ -3,6 +3,7 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
 import {bootstrap} from '@angular/platform-browser-dynamic';
+import { HTTP_PROVIDERS } from '@angular/http';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.scss';
 
@@ -16,5 +17,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 bootstrap(Root, [
-  provideRouter(routes)
+  provideRouter(routes),
+  HTTP_PROVIDERS
 ]);
