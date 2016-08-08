@@ -3,7 +3,7 @@ import {Hero} from './hero';
 
 @Component({
   selector: 'hero',
-  template: '{{hero.name}}'
+  template: `{{hero.name}} <img src="{{hero.picture}}" class="img img-responsive">`
 })
 export class HeroComponent {
   @Input() hero: Hero;
