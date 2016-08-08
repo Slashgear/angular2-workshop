@@ -1,7 +1,8 @@
 import {Hero} from './hero';
+import {Observable} from 'rxjs/Rx';
 
 export class HeroService {
-  findHeroes(): Hero[]{
-    return [new Hero('Ironman'), new Hero('Captain America')];
+  findHeroes(): Observable<Hero[]> {
+    return Observable.of([new Hero('Ironman'), new Hero('Captain America')]);
   }
 }
