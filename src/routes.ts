@@ -3,6 +3,7 @@
 import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES, RouterConfig} from '@angular/router';
 import {Hello} from './app/hello.component';
+import {Heroes} from './app/heroes.component';
 
 @Component({
   selector: 'root',
@@ -20,7 +21,7 @@ import {Hello} from './app/hello.component';
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a routerLink="/" routerLinkActive="active">Hello</a></li>
+            <li><a routerLink="" routerLinkActive="active">Hello</a></li>
             <li><a routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -37,5 +38,9 @@ export const routes: RouterConfig = [
   {
     path: '',
     component: Hello
+  },
+  {
+    path: 'heroes',
+    component: Heroes
   }
 ];
